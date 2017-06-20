@@ -33,6 +33,20 @@
         </ul>
       </div>
     </nav>
+
+    <!-- Main content -->
+    <% flash.each do |key, value| %>
+        <div class="alert alert-<%= key %>">
+          <%= value %>
+        </div>
+      <% end %>
     <%= yield %>
+    <!-- Footer -->
+    <nav class="navbar navbar-fixed-bottom">
+      <div class="container-fluid">
+        <p class="navbar-text navbar-left">Logged in as: <%= current_user.name %></p>
+        <p class="navbar-text navbar-right">Created by <a href="https://ceedubs84.github.io/" class="navbar-link">Chris Woodside</a></p>
+      </div>
+    </nav>
   </body>
 </html>
