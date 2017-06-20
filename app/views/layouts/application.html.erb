@@ -1,14 +1,38 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Tablexichallenge</title>
+    <title>CHOW</title>
     <%= csrf_meta_tags %>
-
+    <%= favicon_link_tag 'chow_logo.png' %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/"><img src="chow_logo.png"></a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li><p class="logo">CHOW</p></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="/about" class="navbar-text">ABOUT</a></li>
+          <% if current_user %>
+            <li><a data-method="delete" href="/logout" rel="nofollow" class="navbar-text">SIGN OUT</a></li>
+            <li><a href="/carted_menu_items"><span class="glyphicon glyphicon-shopping-cart navbar-text"></span></a></li>
+          <% elsif current_admin %>
+            <li><a data-method="delete" href="/logout" rel="nofollow" class="navbar-text">SIGN OUT</a></li>
+            <li><a href="/carted_menu_items"><span class="glyphicon glyphicon-shopping-cart navbar-text"></span></a></li>
+          <% else %>
+            <li><a href="/login" rel="nofollow" class="navbar-text">SIGN IN</a></li>
+            <li><a href="/signup" rel="nofollow" class="navbar-text">SIGN UP</a></li>
+          <% end %>
+        </ul>
+      </div>
+    </nav>
     <%= yield %>
   </body>
 </html>
