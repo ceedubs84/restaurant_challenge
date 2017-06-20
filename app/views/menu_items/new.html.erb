@@ -1,2 +1,14 @@
-<h1>MenuItems#new</h1>
-<p>Find me in app/views/menu_items/new.html.erb</p>
+<div class="container">
+  <%= form_for(@menu_item) do |f| %>
+
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+    <%= f.label :price %>
+    <%= f.number_field :price %>
+    <%= f.button :submit, class: 'btn btn-primary btn-small' %>
+    <%= link_to 'Cancel', '/menu_items', :class => 'btn btn-default btn-small'  %>
+
+  <% end %>
+</div>
