@@ -1,0 +1,128 @@
+@import "bootstrap-sprockets"
+@import "bootstrap"
+
+$lightest-yellow: rgb(255, 250, 230);
+$light-yellow: rgb(255, 240, 179);
+$mid-yellow: rgb(255, 230, 128);
+$dark-yellow: rgb(255, 204, 0);
+
+
+.navbar-brand img {
+    height: 35px;
+    width: auto;
+
+}
+
+.navbar .navbar-nav {
+  display: inline-block;
+  text-align: center;
+}
+
+.navbar .navbar-collapse {
+  text-align: center;
+}
+
+.logo {
+  padding: 20px 0;
+  display: inline-block;
+  font-family: Verdana, Geneva, sans-serif;
+  font-style: bold;
+}
+
+.navbar-fixed-top {
+  background: -webkit-linear-gradient(110deg, $dark-yellow 60%, $mid-yellow 60%);
+  background: -o-linear-gradient(110deg, $dark-yellow 60%, $mid-yellow 60%);
+  background: -moz-linear-gradient(110deg, $dark-yellow 60%, $mid-yellow 60%);
+  background: linear-gradient(120deg, $dark-yellow 60%, $mid-yellow 60%);
+}
+
+.navbar-fixed-bottom {
+  background: -webkit-linear-gradient(110deg, $dark-yellow 40%, $mid-yellow 40%);
+  background: -o-linear-gradient(110deg, $dark-yellow 40%, $mid-yellow 40%);
+  background: -moz-linear-gradient(110deg, $dark-yellow 40%, $mid-yellow 40%);
+  background: linear-gradient(120deg, $dark-yellow 40%, $mid-yellow 40%);
+}
+
+body {
+  background: $lightest-yellow;
+  padding-top: 85px;
+  padding-bottom: 65px;
+}
+
+.thumbnail img {
+  max-width: 430px;
+  max-height: 180px;
+}
+
+// CSS for new inpout form
+// * {
+//   box-sizing: border-box;
+// }
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1em;
+  background: $mid-yellow;
+  border: 5px solid $dark-yellow;
+}
+
+h3 {
+  margin: 0;
+}
+
+input:focus,
+textarea:focus {
+  outline: 3px solid $dark-yellow;
+}
+
+input,
+textarea,
+button {
+  width: 100%;
+  border: 1px solid $dark-yellow;
+}
+
+.wrapper > * {
+  padding: 1em;
+}
+
+form label {
+  display: block;
+}
+
+form p {
+  margin: 0;
+}
+
+button,
+input,
+textarea {
+  padding: 1em;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 20px;
+}
+form p {
+  grid-column: 1 / 2;
+}
+
+.input-file-wrapper {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+}
+
+// For Landing page
+.jumbotron {
+  background-color: $light-yellow;
+}
+// Design courtesy of Kedar on codepen
+.well {
+  background: -webkit-linear-gradient(70deg, $dark-yellow  30%, rgba(0,0,0,0) 30%), -webkit-linear-gradient(30deg, $mid-yellow 60%, $light-yellow 60%);
+  background: -o-linear-gradient(70deg, $dark-yellow  30%, rgba(0,0,0,0) 30%), -o-linear-gradient(30deg, $mid-yellow 60%, $light-yellow 60%);
+  background: -moz-linear-gradient(70deg, $dark-yellow  30%, rgba(0,0,0,0) 30%), -moz-linear-gradient(30deg, $mid-yellow 60%, $light-yellow 60%);
+  background: linear-gradient(70deg, $dark-yellow  30%, rgba(0,0,0,0) 30%), linear-gradient(30deg, $mid-yellow 60%, $light-yellow 60%);
+}
