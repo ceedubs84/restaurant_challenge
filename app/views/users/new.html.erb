@@ -1,2 +1,12 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<h1>Sign Up to order and enjoy our great products!</h1>
+<%= form_for @user do |f| %>
+  <%= f.text_field :name %>
+  <%= f.text_field :email %>
+  <div>
+    <%= label_tag :password %>
+    <%= password_field_tag :password %>
+    <%= label_tag :password_confirmation %>
+    <%= password_field_tag :password_confirmation %>
+  </div>
+  <%= f.submit "Register!" %>
+<% end %>
