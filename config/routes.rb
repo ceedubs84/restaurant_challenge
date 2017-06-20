@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'menu_items/index'
+
+  get 'menu_items/new'
+
+  get 'menu_items/show'
+
+  get 'menu_items/edit'
+
   get 'pages/index'
 
   get 'pages/about'
