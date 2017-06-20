@@ -1,7 +1,18 @@
 Rails.application.routes.draw do
-  get 'users/new'
+  get 'pages/index'
 
-  get 'users/create'
+  get 'pages/about'
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get 'pages/admin_panel'
+
+  resources :menu_items
+
+  get '/about' => 'pages#about'
+  get '/panel' => 'pages#admin_panel'
+
+  get '/signup' => 'users#new'
+  post '/users' => 'users#new'
+  get '/login' => 'users#new'
+  post '/login' => 'users#new'
+  get '/logout' => 'users#new'
 end

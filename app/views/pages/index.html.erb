@@ -1,0 +1,35 @@
+<div class="well">
+  <div class="jumbotron jumbotron-header">
+    <div class="row">
+      <div class="col-md-offset-2 col-md-8">
+        <h1 class="landing-head-logo">CHOW</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-offset-2 col-md-8">
+        <p id="jumbotron-message"><strong>CHOW</strong> is a classic burger joint with all your favorite grill treats!</p>
+        <p id="jumbotron-message"><em>"Best burger in the city!" - Local Expert</em></p>
+        <p id="jumbotron-message"><em>"Wonderful food and service!" - Celebrity Chef</em></p>
+        <p id="jumbotron-message"><em>"<span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span>" - Culinary Expert</em></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-offset-2 col-md-8">
+      <% if current_user %>
+        <a href="/menu_items"><span class="btn btn-primary">VIEW MENU</span></a>
+      <% elsif current_admin %>
+        <a href="/menu_items"><span class="btn btn-primary">VIEW MENU</span></a>
+        <a href="/panel"><span class="btn btn-info">ADMIN PANEL</span></a>
+      <% else %>
+        <a href="/users/sign_up"><span class="btn btn-primary">SIGN UP</span></a>
+      <% end %>
+        <p>Users can order great food from our menu!</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-offset-2 col-md-8">
+        <a href="/panel">ADMIN SIGN IN</a>
+      </div>
+    </div>
+  </div>
+</div>
