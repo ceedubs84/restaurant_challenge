@@ -9,7 +9,10 @@ class OrdersController < ApplicationController
     if order.update_all_totals
       flash[:success] = 'Your order was created successfully!'
       redirect_to "/orders/#{order.id}"
-      
+    else
+      flash[:success] = 'Your order was created successfully!'
+      redirect_to '/carted_menu_items'
+    end
   end
 
   def show
