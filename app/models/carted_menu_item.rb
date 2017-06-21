@@ -1,0 +1,2 @@
+class CartedMenuItem < ApplicationRecord
+end
