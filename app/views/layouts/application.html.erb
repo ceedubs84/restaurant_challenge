@@ -21,14 +21,14 @@
         <ul class="nav navbar-nav navbar-right">
           <li><a href="/about" class="navbar-text">ABOUT</a></li>
           <% if current_user %>
-            <li><a data-method="delete" href="/logout" rel="nofollow" class="navbar-text">SIGN OUT</a></li>
+            <li><a href="/logout" class="navbar-text">SIGN OUT</a></li>
             <li><a href="/carted_menu_items"><span class="glyphicon glyphicon-shopping-cart navbar-text"></span></a></li>
           <% elsif current_admin %>
-            <li><a data-method="delete" href="/logout" rel="nofollow" class="navbar-text">SIGN OUT</a></li>
+            <li><a href="/logout" class="navbar-text">SIGN OUT</a></li>
             <li><a href="/carted_menu_items"><span class="glyphicon glyphicon-shopping-cart navbar-text"></span></a></li>
           <% else %>
-            <li><a href="/login" rel="nofollow" class="navbar-text">SIGN IN</a></li>
-            <li><a href="/signup" rel="nofollow" class="navbar-text">SIGN UP</a></li>
+            <li><a href="/login" class="navbar-text">SIGN IN</a></li>
+            <li><a href="/signup" class="navbar-text">SIGN UP</a></li>
           <% end %>
         </ul>
       </div>
