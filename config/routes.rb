@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
-  get 'carted_menu_items/index'
-
   resources :menu_items
+  resources :carted_menu_items
 
   get '/' => 'pages#index'
   get '/about' => 'pages#about'
