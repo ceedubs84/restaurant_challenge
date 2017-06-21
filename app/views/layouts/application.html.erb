@@ -44,7 +44,11 @@
     <!-- Footer -->
     <nav class="navbar navbar-fixed-bottom">
       <div class="container-fluid">
-        <p class="navbar-text navbar-left">Logged in as: <%= current_user.name %></p>
+        <% if current_user %>
+          <p class="navbar-text navbar-left">Logged in as: <%= current_user.name %></p>
+        <% elsif current_admin %>
+          <p class="navbar-text navbar-left">Logged in as: <%= current_user.name %></p>
+        <% end %>
         <p class="navbar-text navbar-right">Created by <a href="https://ceedubs84.github.io/" class="navbar-link">Chris Woodside</a></p>
       </div>
     </nav>
