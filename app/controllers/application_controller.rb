@@ -6,6 +6,11 @@ class ApplicationController < ActionController::Base
   end
   helper_method :current_user
 
+  def current_admin
+    @current_admin ||= User.find_by(id: session[:user_id]) if session[:user_id] && current_user.admin
+  end
+  helper_method :current_admin
+
   def authenticate_user!
     redirect_to '/login' unless current_user
   end
