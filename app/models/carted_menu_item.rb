@@ -6,6 +6,6 @@ class CartedMenuItem < ApplicationRecord
   validates :quantity, numericality: true
 
   def subtotal
-    quantity * product.price
+    quantity * menu_item.price
   end
 end
