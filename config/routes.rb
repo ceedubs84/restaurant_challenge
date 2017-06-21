@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'orders/show'
+
   resources :menu_items
   resources :carted_menu_items
 

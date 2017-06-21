@@ -1,0 +1,17 @@
+<div class="container">
+  <h1>Your order info:</h1>
+  <h2>Order id: <%= @order.id + 3435252 %></h2>
+
+  <% @order.carted_menu_items.each do |carted_menu_item| %>
+    <h5><%= carted_menu_item.menu_item.name %></h5>
+    <h6>Quantity: <%= carted_menu_item.quantity %></h6>
+    <h6>Price: <%= number_to_currency(carted_menu_item.menu_item.price) %></h6>
+  <% end %>
+
+  <hr>
+  <h3>Subtotal: <%= number_to_currency(@order.subtotal) %></h3>
+  <h3>Tax: <%= number_to_currency(@order.tax) %></h3>
+  <h3>Total: <%= number_to_currency(@order.total) %></h3>
+  <hr>
+  <h3>Email: <%= @order.user.email %></h3>
+</div>  
