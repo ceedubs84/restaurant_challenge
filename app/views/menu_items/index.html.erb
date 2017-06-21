@@ -17,7 +17,7 @@
               <a href="/menu_items/<%= menu_item.id %>/edit" class="btn btn-default" role="button">Edit Item</a>
             </div>
             <% end %>
-            <% if current_user %>
+            <% if current_user.admin == false %>
               <div class="container">
                 <div class="btn-group">
                   <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
