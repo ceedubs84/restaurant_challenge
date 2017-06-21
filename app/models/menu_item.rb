@@ -1,4 +1,6 @@
 class MenuItem < ApplicationRecord
+  has_many :carted_menu_items
+  has_many :orders, through: :carted_menu_items
   validates :name, presence: true
   validates :name, uniqueness: true
   validates :description, presence: true
