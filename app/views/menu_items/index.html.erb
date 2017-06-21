@@ -24,9 +24,12 @@
                     <span class="glyphicon glyphicon-shopping-cart"></span>Add
                   </button>
                   <ul class="dropdown-menu">
-                    <li><input type="text" placeholder="Enter quantity">Quantity</a></li>
-                    <li role="separator" class="divider"></li>
-                    <li><a href="/carted_products" class="btn btn-success">Add to Cart</a></li>
+                    <form action="/carted_menu_items" method="post">
+                      <li><input type="number" name="quantity" placeholder="Enter quantity">Quantity</li>
+                      <input type="hidden" name="menu_item_id" value="<%= menu_item.id %>">
+                      <li role="separator" class="divider"></li>
+                      <li><input type="submit" class="btn btn-success">Add to Cart</li>
+                    </form>
                   </ul>
                 </div>
               </div>
