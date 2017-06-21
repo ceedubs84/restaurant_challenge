@@ -2,11 +2,11 @@
   <%= form_for(@menu_item) do |f| %>
 
     <%= f.label :name  %>
-    <%= f.text_field :name, @menu_item ? @menu_item.price : "" %>
+    <%= f.text_field :name %>
     <%= f.label :description %>
-    <%= f.text_field :description, @menu_item ? @menu_item.price : "" %>
+    <%= f.text_field :description %>
     <%= f.label :price %>
-    <%= f.number_field :price, @menu_item ? @menu_item.description : "" %>
+    <%= f.number_field :price %>
     <%= f.button :submit, class: 'btn btn-primary btn-small' %> Edit
     <%= link_to 'Cancel', '/menu_items', :class => 'btn btn-default btn-small'  %>
 
