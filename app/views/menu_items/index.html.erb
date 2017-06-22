@@ -11,7 +11,7 @@
             <h3><%= menu_item.name %></h3>
             <p><%= menu_item.description %></p>
             <p><%= number_to_currency(menu_item.price) %></p>
-            <% if current_user.admin? %>
+            <% if current_user && current_user.admin? %>
               <div>
                 <a href="/menu_items/<%= menu_item.id %>" class="btn btn-primary" role="button">View Item</a>
                 <a href="/menu_items/<%= menu_item.id %>/edit" class="btn btn-default" role="button">Edit Item</a>
@@ -24,7 +24,7 @@
                   </button>
                   <ul class="dropdown-menu">
                     <form action="/carted_menu_items" method="post">
-                      <li><input type="number" name="quantity" placeholder="Enter quantity">Quantity</li>
+                      <li><input type="number" name="quantity" placeholder="Quantity"></li>
                       <input type="hidden" name="menu_item_id" value="<%= menu_item.id %>">
                       <li role="separator" class="divider"></li>
                       <li><input type="submit" class="btn btn-success">Add to Cart</li>
