@@ -18,19 +18,14 @@
               </div>
             <% elsif current_user && current_user.admin == false %>
               <div class="container">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <span class="fa fa-shopping-cart"></span>Add
-                  </button>
-                  <ul class="dropdown-menu">
-                    <form action="/carted_menu_items" method="post">
-                      <li><input type="number" name="quantity" placeholder="Quantity"></li>
-                      <input type="hidden" name="menu_item_id" value="<%= menu_item.id %>">
-                      <li role="separator" class="divider"></li>
-                      <li><input type="submit" class="btn btn-success">Add to Cart</li>
-                    </form>
-                  </ul>
-                </div>
+                <form action="/carted_menu_items" method="post">
+                  <input type="number" name="quantity" placeholder="Quantity">
+                  <input type="hidden" name="menu_item_id" value="<%= menu_item.id %>">
+                  <input type="hidden" name="user_id" value="<%= current_user.id %>">
+                  <input type="hidden" name="status" value="carted">
+                  <br>
+                  <input type="submit" class="btn btn-success" value="Add to Cart">
+                </form>
               </div>
             <% end %>
           </div>
