@@ -44,7 +44,8 @@ $dark-yellow: rgb(255, 204, 0);
 }
 
 body {
-  background: $lightest-yellow;
+  background-image: url('/negative-space-tasty-burger-fries.jpg');
+  background-size: cover;
   padding-top: 85px;
   padding-bottom: 65px;
 }
@@ -117,7 +118,7 @@ form p {
 
 // For Landing page
 .jumbotron {
-  background-color: $light-yellow;
+  background: $light-yellow;
 }
 // Design courtesy of Kedar on codepen
 .well {
@@ -125,4 +126,11 @@ form p {
   background: -o-linear-gradient(70deg, $dark-yellow  30%, rgba(0,0,0,0) 30%), -o-linear-gradient(30deg, $mid-yellow 60%, $light-yellow 60%);
   background: -moz-linear-gradient(70deg, $dark-yellow  30%, rgba(0,0,0,0) 30%), -moz-linear-gradient(30deg, $mid-yellow 60%, $light-yellow 60%);
   background: linear-gradient(70deg, $dark-yellow  30%, rgba(0,0,0,0) 30%), linear-gradient(30deg, $mid-yellow 60%, $light-yellow 60%);
+}
+
+// About page
+#about-img {
+  border-style: solid;
+  border-width: 2px;
+  border-color: $dark-yellow;
 }
