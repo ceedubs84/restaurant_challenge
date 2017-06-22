@@ -24,6 +24,7 @@
             <li><a href="/logout" class="navbar-text">SIGN OUT</a></li>
             <li><a href="/carted_menu_items"><span class="fa fa-shopping-cart navbar-text"></span></a></li>
           <% elsif current_user.admin? %>
+            <li><a href="/panel" class="navbar-text">ADMIN PANEL</a></li>
             <li><a href="/logout" class="navbar-text">SIGN OUT</a></li>
           <% else %>
             <li><a href="/login" class="navbar-text">SIGN IN</a></li>
