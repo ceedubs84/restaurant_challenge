@@ -60,61 +60,61 @@ body {
 //   box-sizing: border-box;
 // }
 
-.wrapper {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1em;
-  background: $mid-yellow;
-  border: 5px solid $dark-yellow;
-}
+// .wrapper {
+//   max-width: 1200px;
+//   margin: 0 auto;
+//   padding: 1em;
+//   background: $mid-yellow;
+//   border: 5px solid $dark-yellow;
+// }
 
-h3 {
-  margin: 0;
-}
+// h3 {
+//   margin: 0;
+// }
 
-input:focus,
-textarea:focus {
-  outline: 3px solid $dark-yellow;
-}
+// input:focus,
+// textarea:focus {
+//   outline: 3px solid $dark-yellow;
+// }
 
-input,
-textarea,
-button {
-  width: 100%;
-  border: 1px solid $dark-yellow;
-}
+// input,
+// textarea,
+// button {
+//   width: 100%;
+//   border: 1px solid $dark-yellow;
+// }
 
-.wrapper > * {
-  padding: 1em;
-}
+// .wrapper > * {
+//   padding: 1em;
+// }
 
-form label {
-  display: block;
-}
+// form label {
+//   display: block;
+// }
 
-form p {
-  margin: 0;
-}
+// form p {
+//   margin: 0;
+// }
 
-button,
-input,
-textarea {
-  padding: 1em;
-}
+// button,
+// input,
+// textarea {
+//   padding: 1em;
+// }
 
-form {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  grid-gap: 20px;
-}
-form p {
-  grid-column: 1 / 2;
-}
+// form {
+//   display: grid;
+//   grid-template-columns: 2fr 1fr;
+//   grid-gap: 20px;
+// }
+// form p {
+//   grid-column: 1 / 2;
+// }
 
-.input-file-wrapper {
-  grid-column: 2 / 3;
-  grid-row: 1 / 2;
-}
+// .input-file-wrapper {
+//   grid-column: 2 / 3;
+//   grid-row: 1 / 2;
+// }
 
 // For Landing page
 .jumbotron {
