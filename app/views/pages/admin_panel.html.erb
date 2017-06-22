@@ -1,2 +1,20 @@
-<h1>Pages#admin_panel</h1>
-<p>Find me in app/views/pages/admin_panel.html.erb</p>
+<div class="page-header">
+  <h3>ADMIN DASHBOARD</h3>
+<br>
+<div class="panel panel-warning">
+  <div class="panel-heading">
+    <h3 class="panel-title">Panel title</h3>
+  </div>
+  <div class="panel-body">
+    <p>There are <%= @item_count %> total menu items.</p>
+    <p>There are <%= @user_count %> total users.</p>
+    <p><%= @user_count %> total orders have been placed.</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-12 col-md-6 col-lg-4">
+    <a href="/menu_items"><span class="btn btn-warning">View Menu Items</span></a>
+    <a href="/menu_items/new"><span class="btn btn-success">+ Add Item</span></a>
+  </div>
+</div>
