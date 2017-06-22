@@ -12,8 +12,8 @@ class PagesController < ApplicationController
     @item_count = @menu_items.count
     @users = User.all
     @user_count = @users.count
-    # @orders = Qrder.all
-    # @order_count = @orders.count
+    @orders = Order.all
+    @order_count = @orders.count
     'admin_panel.html.erb'
   end
 end
