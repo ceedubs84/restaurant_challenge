@@ -17,7 +17,7 @@
       <div class="col-md-offset-2 col-md-8">
       <% if current_user %>
         <a href="/menu_items"><span class="btn btn-primary">VIEW MENU</span></a>
-      <% elsif current_user.admin %>
+      <% elsif current_user.admin? %>
         <a href="/menu_items"><span class="btn btn-primary">VIEW MENU</span></a>
         <a href="/panel"><span class="btn btn-info">ADMIN PANEL</span></a>
       <% else %>
