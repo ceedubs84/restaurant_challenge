@@ -1,17 +1,35 @@
-<div class="container">
-  <h1>Your order info:</h1>
-  <h2>Order id: <%= @order.id + 3435252 %></h2>
-
-  <% @order.carted_menu_items.each do |carted_menu_item| %>
-    <h5><%= carted_menu_item.menu_item.name %></h5>
-    <h6>Quantity: <%= carted_menu_item.quantity %></h6>
-    <h6>Price: <%= number_to_currency(carted_menu_item.menu_item.price) %></h6>
-  <% end %>
-
-  <hr>
-  <h3>Subtotal: <%= number_to_currency(@order.subtotal) %></h3>
-  <h3>Tax: <%= number_to_currency(@order.tax) %></h3>
-  <h3>Total: <%= number_to_currency(@order.total) %></h3>
-  <hr>
-  <h3>Email: <%= @order.user.email %></h3>
+<div class="container" id="order-index">
+  <h1>Order Summary</h1>
+  <h3>Order #: <%= @order.id + 2435252 %></h3>
+  <table class="table table-bordered table-hover">
+    <tr>
+      <th>Menu Item</th>
+      <th>Quantity</th>
+      <th>Price</th>
+      <th><bold>Item Subtotal</bold></th>
+    </tr>
+    <tbody>
+      <% @order.carted_menu_items.each do |carted_menu_item| %>
+        <tr>
+          <td><%= carted_menu_item.menu_item.name %></td>
+          <td><%= carted_menu_item.quantity %></td>
+          <td><%= number_to_currency(carted_menu_item.menu_item.price) %></td>
+          <td><%= number_to_currency(carted_menu_item.subtotal) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <table class="table table-bordered table-condensed">
+    <tr>
+      <th>Order Subtotal</th>
+      <th>Tax</th>
+      <th>Total</th>
+    </tr>
+    <tr class="info">
+      <td>Subtotal: <%= number_to_currency(@order.subtotal) %></td>
+      <td>Tax: <%= number_to_currency(@order.tax) %></td>
+      <td>Total: <%= number_to_currency(@order.total) %></td>
+    </tr>
+  </table>
+  <h4>Email: <%= @order.user.email %></h4>
 </div>  
