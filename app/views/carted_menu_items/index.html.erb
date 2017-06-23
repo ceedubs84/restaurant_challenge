@@ -2,13 +2,21 @@
   <h1>Shopping cart</h1>
 </div>
 <div class="container">
-  <% @carted_menu_items.each do |carted_menu_item| %>
-    <h2>Name: <%= carted_menu_item.menu_item.name %></h2>
-    <h2>Quantity: <%= carted_menu_item.quantity %></h2>
-    <h2>Item Subtotal: <%= carted_menu_item.subtotal %></h2>
-    <%= link_to "Remove from cart", "/carted_menu_items/#{carted_menu_item.id}", method: :delete %>
-  <% end %>
-  <%= form_tag "/orders", method: :post do %>
-    <%= submit_tag "Buy now!" %>
-  <% end %>
+  <div class="row">
+    <% @carted_menu_items.each do |carted_menu_item| %>
+      <div class="col-sm-12 col-md-6 col-lg-4">
+        <div class="thumbnail">
+          <div class="caption">
+            <h3><%= carted_menu_item.menu_item.name %></h3>
+            <h4>Quantity: <%= carted_menu_item.quantity %></h4>
+            <h4>Item Subtotal: <%= number_to_currency(carted_menu_item.subtotal) %></h4>
+            <%= link_to "Remove from cart", "/carted_menu_items/#{carted_menu_item.id}", method: :delete %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    <%= form_tag "/orders", method: :post do %>
+      <%= submit_tag "Order NOW!", class: 'btn btn-success' %>
+    <% end %>
+  </div>
 </div>
