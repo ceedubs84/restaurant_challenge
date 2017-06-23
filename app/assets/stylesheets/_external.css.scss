@@ -44,7 +44,7 @@ $dark-yellow: rgb(255, 204, 0);
 }
 
 body {
-  background-image: url('/negative-space-tasty-burger-fries.jpg');
+  background-image: url('/negative-space-tasty-burger-fries-bg.jpg');
   background-size: cover;
   padding-top: 85px;
   padding-bottom: 65px;
@@ -75,7 +75,7 @@ body {
 }
 
 #header {
-  color: $light-yellow;
-  text-shadow: 5px 5px 10px $dark-yellow;
+  color: $dark-yellow;
+  text-shadow: 5px 5px 10px black;
   font-variant: small-caps;
 }
