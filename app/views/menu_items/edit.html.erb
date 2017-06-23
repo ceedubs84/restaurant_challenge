@@ -1,23 +1,23 @@
 <div class="row">
-    <div class="col-sm-8 col-sm-offset-2">
-      <div class="container">
-        <h1>Edit Menu Item</h1>
-        <%= form_tag "/menu_items/#{@menu_item.id}", method: :patch do %>
-          <div>
-            <%= label_tag :name %>
-            <%= text_field_tag :name, @menu_item.name %>
-          </div>
-          <div>
-            <%= label_tag :price %>
-            <%= text_field_tag :price, @menu_item.price %>
-          </div>
-          <div>
-            <%= label_tag :description %>
-            <%= text_field_tag :description, @menu_item.description %>
-          </div>
-          <%= submit_tag "Update Product" %>
+  <div class="col-sm-8 col-sm-offset-2">
+    <div class="container">
+      <h1>Edit Menu Item</h1>
+      <%= form_tag "/menu_items/#{@menu_item.id}", method: :patch do %>
+        <div>
+          <%= label_tag :name %>
+          <%= text_field_tag :name, @menu_item.name %>
+        </div>
+        <div>
+          <%= label_tag :price %>
+          <%= text_field_tag :price, @menu_item.price %>
+        </div>
+        <div>
+          <%= label_tag :description %>
+          <%= text_field_tag :description, @menu_item.description %>
+        </div>
+        <%= submit_tag "Update Product" %>
 
-        <% end %>
-      </div>
+      <% end %>
     </div>
   </div>
+</div>
