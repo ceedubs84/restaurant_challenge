@@ -15,7 +15,7 @@ class MenuItemsController < ApplicationController
   def create
     @menu_item = MenuItem.new(menu_item_params)
     if @menu_item.save
-      flash[:success] = 'Item = #{@menu_item.name} created successfully!'
+      flash[:success] = "#{@menu_item.name} added to menu!"
       redirect_to "/menu_items/#{@menu_item.id}"
     else
       flash[:warning] = 'Menu item did not save. Please try again.'
