@@ -2,7 +2,7 @@ class MenuItem < ApplicationRecord
   has_many :carted_menu_items
   has_many :orders, through: :carted_menu_items
   has_many :menu_item_categories
-  has_many :categories, through: :menu_item_categories
+  has_and_belongs_to_many :categories
 
   validates :name, presence: true
   validates :name, uniqueness: true
