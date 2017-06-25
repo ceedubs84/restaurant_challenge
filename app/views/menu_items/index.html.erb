@@ -9,8 +9,14 @@
           
           <div class="caption">
             <h3><%= menu_item.name %></h3>
-            <p><%= menu_item.description %></p>
-            <p><%= number_to_currency(menu_item.price) %></p>
+            <h5>
+              Categories:
+              <% menu_item.categories.each do |category| %>
+                <a href="/menu_items?category_name=<%= category.name %>"><%= category.name %></a>
+              <% end %>
+            </h5>
+            <p><em><%= menu_item.description %></em></p>
+            <p><strong><%= number_to_currency(menu_item.price) %></strong></p>
             <% if current_user && current_user.admin? %>
               <div>
                 <a href="/menu_items/<%= menu_item.id %>" class="btn btn-primary" role="button">View Item</a>
