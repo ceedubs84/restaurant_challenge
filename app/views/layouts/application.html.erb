@@ -21,6 +21,7 @@
         <ul class="nav navbar-nav navbar-right">
           <li><a href="/about" class="navbar-text">ABOUT</a></li>
           <% if current_user && current_user.admin == false %>
+            <li><a href="/menu_items" class="navbar-text">MENU</a></li>
             <li><a href="/logout" class="navbar-text">SIGN OUT</a></li>
             <li><a href="/carted_menu_items"><span class="fa fa-shopping-cart navbar-text"></span></a></li>
           <% elsif current_user && current_user.admin? %>
