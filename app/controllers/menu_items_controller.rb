@@ -60,7 +60,8 @@ class MenuItemsController < ApplicationController
     params.require(:menu_item).permit(
       :name,
       :description,
-      :price
+      :price,
+      category_ids: []
     )
   end
 end

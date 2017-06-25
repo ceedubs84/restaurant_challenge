@@ -15,6 +15,15 @@
           <%= label_tag :description %>
           <%= text_field_tag :description, @menu_item.description %>
         </div>
+        <div class="field">
+            <%= label_tag 'Categories' %><br />
+            <%= collection_check_boxes(:menu_item, :category_ids, Category.all, :id, :name) do |c| %>
+                <div class="collection-check-box">
+                    <%= c.check_box %>
+                    <%= c.label %>
+                </div>
+            <% end %>
+        </div>
         <%= submit_tag "Update Product" %>
 
       <% end %>
