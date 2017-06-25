@@ -4,6 +4,8 @@ class PagesController < ApplicationController
   end
 
   def about
+    @about_info = Faker::Lorem.paragraphs(2)
+    puts @about_info
     'about.html.erb'
   end
 

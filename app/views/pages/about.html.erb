@@ -6,8 +6,10 @@
         <div class="panel-body">
           <div class="row">
             <div class="col-md-6">
-              <p>CHOW was started in 2017. We serve the best food in the business, hands down.</p>
-              <p>Blah, blah, blah.</p>
+              <p>CHOW was established in 2017. We serve the best food in the business, hands down.</p>
+              <%= @about_info.each do |p| %>
+                <p><%= p %></p>
+              <% end %>
             </div>
             <div class="col-md-6">
               <img src="/negative-space-rustic-restaurant.jpg" width="630" class="img-responsive" id="about-img">

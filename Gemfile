@@ -49,6 +49,8 @@ group :development, :test do
   gem 'byebug', platform: :mri
   # For testing
   gem 'rspec-rails', '~> 3.5'
+  # For fake data
+  gem 'faker'
 end
 
 group :development do
