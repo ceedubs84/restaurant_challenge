@@ -59,7 +59,7 @@ body {
   background: $light-yellow;
 }
 // Design courtesy of Kedar on codepen
-.well {
+#landing-container {
   background: -webkit-linear-gradient(70deg, $dark-yellow  30%, rgba(0,0,0,0) 30%), -webkit-linear-gradient(30deg, $mid-yellow 60%, $light-yellow 60%);
   background: -o-linear-gradient(70deg, $dark-yellow  30%, rgba(0,0,0,0) 30%), -o-linear-gradient(30deg, $mid-yellow 60%, $light-yellow 60%);
   background: -moz-linear-gradient(70deg, $dark-yellow  30%, rgba(0,0,0,0) 30%), -moz-linear-gradient(30deg, $mid-yellow 60%, $light-yellow 60%);
@@ -81,4 +81,9 @@ body {
 
 #order-index {
   background: $light-yellow;
+}
+
+#navlogo {
+  font-size: 1.5em;
+  font-weight: bold;
 }

@@ -1,20 +1,19 @@
-<div class="well">
-  <div class="jumbotron jumbotron-header">
+<div class="container" id="landing-container">
+  <div class="jumbotron">
     <div class="row">
-      <div class="col-md-offset-2 col-md-8">
-        <h1 class="landing-head-logo">CHOW</h1>
+      <div class="col-md-6">
+        <img src="/chow_logo.png" class="img-responsive" id="landing-logo">
       </div>
-    </div>
-    <div class="row">
-      <div class="col-md-offset-2 col-md-8">
+      <div class="col-md-6" >
         <p id="jumbotron-message"><strong>CHOW</strong> is a classic burger joint with all your favorite grill treats!</p>
         <p id="jumbotron-message"><em>"Best burger in the city!" - Local Expert</em></p>
         <p id="jumbotron-message"><em>"Wonderful food and service!" - Celebrity Chef</em></p>
         <p id="jumbotron-message"><em>"<span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span>" - Culinary Expert</em></p>
       </div>
     </div>
+    <br>
     <div class="row">
-      <div class="col-md-offset-2 col-md-8">
+      <div class="col-md-6">
       <% if current_user && current_user.admin == false %>
         <a href="/menu_items"><span class="btn btn-primary">VIEW MENU</span></a>
       <% elsif current_user && current_user.admin? %>
