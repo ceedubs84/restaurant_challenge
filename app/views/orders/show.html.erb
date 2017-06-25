@@ -1,12 +1,14 @@
+<div class="page-header" id="header">
+  <h1>Order Summary  <span class="fa fa-list"></span></h1>
+</div>
 <div class="container" id="order-index">
-  <h1>Order Summary</h1>
   <h3>Order #: <%= @order.id + 2435252 %></h3>
   <table class="table table-bordered table-hover">
     <tr>
       <th>Menu Item</th>
       <th>Quantity</th>
       <th>Price</th>
-      <th><bold>Item Subtotal</bold></th>
+      <th>Item Subtotal</th>
     </tr>
     <tbody>
       <% @order.carted_menu_items.each do |carted_menu_item| %>
@@ -23,12 +25,12 @@
     <tr>
       <th>Order Subtotal</th>
       <th>Tax</th>
-      <th>Total</th>
+      <th>Order Total</th>
     </tr>
     <tr class="info">
-      <td>Subtotal: <%= number_to_currency(@order.subtotal) %></td>
-      <td>Tax: <%= number_to_currency(@order.tax) %></td>
-      <td>Total: <%= number_to_currency(@order.total) %></td>
+      <td><%= number_to_currency(@order.subtotal) %></td>
+      <td><%= number_to_currency(@order.tax) %></td>
+      <td style="color: #0066ff"><strong><%= number_to_currency(@order.total) %></strong></td>
     </tr>
   </table>
   <h4>Email: <%= @order.user.email %></h4>

@@ -4,6 +4,12 @@ class CartedMenuItemsController < ApplicationController
 
   def index
     @carted_menu_items = current_user.carted_menu_items.where(status: 'carted')
+    @carted_subtotal = 0
+    @carted_menu_items.each do |carted_menu_item|
+      @carted_subtotal += carted_menu_item.subtotal
+    end
+    @tax = @carted_subtotal * 0.09
+    @carted_total = @tax + @carted_subtotal
     if @carted_menu_items.length > 0
       render 'index.html.erb'
     else

@@ -1,7 +1,8 @@
 <div class="page-header" id="header">
-  <h1>Shopping cart<span class="fa fa-shopping-cart"></span></h1>
+  <h1>Shopping Cart  <span class="fa fa-shopping-cart"></span></h1>
 </div>
 <div class="container" id="order-index">
+  <h3>Current Cart</h3>
   <table class="table table-bordered table-hover">
     <tr>
       <th>Menu Item</th>
@@ -20,11 +21,26 @@
       <% end %>
     </tbody>
   </table>
+  <table class="table table-bordered table-condensed">
+    <tr>
+      <th>Cart Subotal</th>
+      <th>Cart Tax</th>
+      <th>Cart Total</th>
+    </tr>
+    <tbody>
+      <tr class="info">
+        <td><%= number_to_currency(@carted_subtotal) %></td>
+        <td><%= number_to_currency(@tax) %></td>
+        <td style="color: #0066ff"><strong><%= number_to_currency(@carted_total) %></strong></td>
+      </tr>
+    </tbody>
+  </table>
   <div>
     <%= form_tag "/orders", method: :post do %>
       <%= submit_tag "Order NOW!", class: 'btn btn-success' %>
     <% end %>
-    <br>
+  </div>
+  <div>
     <a href="/menu_items" class="btn btn-warning">Keep Shopping!</a>
   </div>
 </div>
