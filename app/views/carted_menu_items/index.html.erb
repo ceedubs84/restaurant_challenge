@@ -1,22 +1,30 @@
 <div class="page-header" id="header">
   <h1>Shopping cart<span class="fa fa-shopping-cart"></span></h1>
 </div>
-<div class="container">
-  <div class="row">
-    <% @carted_menu_items.each do |carted_menu_item| %>
-      <div class="col-sm-12 col-md-6 col-lg-4">
-        <div class="thumbnail">
-          <div class="caption">
-            <h3><%= carted_menu_item.menu_item.name %></h3>
-            <h4>Quantity: <%= carted_menu_item.quantity %></h4>
-            <h4>Item Subtotal: <%= number_to_currency(carted_menu_item.subtotal) %></h4>
-            <%= link_to "Remove from cart", "/carted_menu_items/#{carted_menu_item.id}", method: :delete %>
-          </div>
-        </div>
-      </div>
-    <% end %>
+<div class="container" id="order-index">
+  <table class="table table-bordered table-hover">
+    <tr>
+      <th>Menu Item</th>
+      <th>Quantity</th>
+      <th>Subtotal</th>
+      <th>Remove?</th>
+    </tr>
+    <tbody>
+      <% @carted_menu_items.each do |carted_menu_item| %>
+        <tr>
+          <td><%= carted_menu_item.menu_item.name %></td>
+          <td><%= carted_menu_item.quantity %></td>
+          <td><%= number_to_currency(carted_menu_item.subtotal) %></td>
+          <td><%= link_to "Remove from cart", "/carted_menu_items/#{carted_menu_item.id}", method: :delete %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <div>
     <%= form_tag "/orders", method: :post do %>
       <%= submit_tag "Order NOW!", class: 'btn btn-success' %>
     <% end %>
+    <br>
+    <a href="/menu_items" class="btn btn-warning">Keep Shopping!</a>
   </div>
 </div>
