@@ -6,6 +6,12 @@
         <div class="caption">
           <h3><%= @menu_item.name %></h3>
           <p><%= @menu_item.description %></p>
+          <h5>
+              Categories:
+              <% @menu_item.categories.each do |category| %>
+                <a href="/menu_items?category_name=<%= category.name %>"><%= category.name %></a>
+              <% end %>
+            </h5>
           <div><%= number_to_currency(@menu_item.price) %></div>
           <% if current_user.admin %>
             <div>
