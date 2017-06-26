@@ -1,23 +1,28 @@
 <div class="container">
-  <%= simple_form_for @menu_item do |f| %>
+  <div class="row">
+    <div class="col-sm-8 col-md-offset-2">
+      <%= simple_form_for @menu_item do |f| %>
 
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-    <%= f.label :description %>
-    <%= f.text_field :description %>
-    <%= f.label :price %>
-    <%= f.number_field :price %>
-    <div class="field">
-        <%= f.label 'Categories' %><br />
-        <%= f.collection_check_boxes :category_ids, Category.all, :id, :name do |c| %>
-            <div class="collection-check-box">
-                <%= c.check_box %>
-                <%= c.label %>
-            </div>
-        <% end %>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+        <%= f.label :description %>
+        <%= f.text_field :description %>
+        <%= f.label :price %>
+        <%= f.number_field :price %>
+        <div class="field">
+            <%= f.label 'Categories' %><br />
+            <%= f.collection_check_boxes :category_ids, Category.all, :id, :name do |c| %>
+                <div class="collection-check-box">
+                    <%= c.check_box %>
+                    <%= c.label %>
+                    <br><br>
+                </div>
+            <% end %>
+        </div>
+        <%= f.button :submit, class: 'btn btn-primary btn-small' %>
+        <%= link_to 'Cancel', '/menu_items', :class => 'btn btn-default btn-small'  %>
+
+      <% end %>
     </div>
-    <%= f.button :submit, class: 'btn btn-primary btn-small' %>
-    <%= link_to 'Cancel', '/menu_items', :class => 'btn btn-default btn-small'  %>
-
-  <% end %>
+  </div>
 </div>
