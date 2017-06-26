@@ -5,6 +5,7 @@ $lightest-yellow: rgb(255, 250, 230);
 $light-yellow: rgb(255, 240, 179);
 $mid-yellow: rgb(255, 230, 128);
 $dark-yellow: rgb(255, 204, 0);
+$cool-blue: rgb(71, 117, 209);
 
 
 .navbar-brand img {
@@ -86,4 +87,8 @@ body {
 #navlogo {
   font-size: 1.5em;
   font-weight: bold;
+}
+
+select {
+  background: $cool-blue;
 }
