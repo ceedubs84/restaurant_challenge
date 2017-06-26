@@ -1,5 +1,5 @@
 <div class="container">
-  <%= form_for(@menu_item) do |f| %>
+  <%= simple_form_for @menu_item do |f| %>
 
     <%= f.label :name %>
     <%= f.text_field :name %>
