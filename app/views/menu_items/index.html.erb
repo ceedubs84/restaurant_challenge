@@ -1,22 +1,36 @@
-<div class="container-fluid">
+<div class="container">
   <div class="page-header" id="header">
     <h3>Current Menu Items  <span class="fa fa-cutlery"></span></h3>
-    <select id="categorySelect" onchange="setCategorySort()">
-      <option value="all">All</option>
-      <%= Category.all.each do |c| %>
-        <option value="<%= c.name %>"><%= c.name %></option>
-      <% end %>
-    </select>
-    <select id="priceSelect" onchange="sortByPrice()">
-      <option value="none"> - - </option>
-      <option value="price_asc">Price Asc.</option>
-      <option value="price_desc">Price Desc.</option>
-    </select>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="dropdown">
+          <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Sort by Category
+          <span class="caret"></span></button>
+          <ul class="dropdown-menu" role="menu">
+            <li class="dropdown-header">Select Category</li>
+            <li><a href="/menu_items">All</a></li>
+            <% @categories.each do |c| %>
+              <li><a href="/menu_items?category_name=<%= c.name %>"><%= c.name %></a></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="dropdown">
+          <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Sort by Price
+          <span class="caret"></span></button>
+          <ul class="dropdown-menu">
+            <li><a href="/menu_items?sort=price&sort_order=asc">Sort by price ascending</a></li>
+            <li><a href="/menu_items?sort=price&sort_order=desc">Sort by price descending</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
   </div>
   <div class="row">
     <% @menu_items.each do |menu_item| %>
-      <div class="col-sm-12 col-md-6 col-lg-4" id="menuItems">
+      <div class="col-sm-12 col-md-6 col-lg-4">
         <div class="thumbnail">
           
           <div class="caption">

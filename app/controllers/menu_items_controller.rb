@@ -3,7 +3,15 @@ class MenuItemsController < ApplicationController
   before_action :authenticate_admin!, only: [:new, :create, :update]
 
   def index
-    @menu_items = MenuItem.all
+    if params[:category_name] != nil
+      selected_category = Category.find_by(name: params[:category_name])
+      @menu_items = selected_category.menu_items
+    else
+      sort_attribute = params[:sort] || "name"
+      sort_order = params[:sort_order] || "asc"
+      @menu_items = MenuItem.order(sort_attribute => sort_order)
+    end
+    @categories = Category.all
     render 'index.html.erb'
   end
 
