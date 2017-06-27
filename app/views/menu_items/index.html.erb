@@ -1,13 +1,13 @@
 <div class="container-fluid">
   <div class="page-header" id="header">
     <h3>Current Menu Items  <span class="fa fa-cutlery"></span></h3>
-    <select>
+    <select id="categorySelect" onchange="setCategorySort()">
       <option value="all">All</option>
       <%= Category.all.each do |c| %>
         <option value="<%= c.name %>"><%= c.name %></option>
       <% end %>
     </select>
-    <select>
+    <select id="priceSelect" onchange="sortByPrice()">
       <option value="none"> - - </option>
       <option value="price_asc">Price Asc.</option>
       <option value="price_desc">Price Desc.</option>
@@ -16,7 +16,7 @@
   </div>
   <div class="row">
     <% @menu_items.each do |menu_item| %>
-      <div class="col-sm-12 col-md-6 col-lg-4">
+      <div class="col-sm-12 col-md-6 col-lg-4" id="menuItems">
         <div class="thumbnail">
           
           <div class="caption">
@@ -24,7 +24,7 @@
             <h5>
               Categories:
               <% menu_item.categories.each do |category| %>
-                <a href="/menu_items?category_name=<%= category.name %>"><%= category.name %></a>
+                <a href="#"><%= category.name %></a>
               <% end %>
             </h5>
             <p><em><%= menu_item.description %></em></p>
