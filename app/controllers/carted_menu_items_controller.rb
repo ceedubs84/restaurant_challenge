@@ -36,10 +36,7 @@ class CartedMenuItemsController < ApplicationController
 
   def update
     @carted_menu_item = CartedMenuItem.find_by(id: params[:id])
-    # @carted_menu_item.user_id = params[:user_id]
-    # @carted_menu_item.menu_item_id = params[:menu_item_id]
     @carted_menu_item.quantity = params[:quantity]
-    # @carted_menu_item.status = params[:status]
     if @carted_menu_item.save
       flash[:success] = 'Cart Updated!'
       redirect_to '/carted_menu_items'
