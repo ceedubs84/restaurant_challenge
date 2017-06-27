@@ -29,6 +29,27 @@ class CartedMenuItemsController < ApplicationController
     end
   end
 
+  def edit
+    @carted_menu_item = CartedMenuItem.find_by(id: params[:id])
+    render 'edit.html.erb'
+  end
+
+  def update
+    @carted_menu_item = CartedMenuItem.find_by(id: params[:id])
+    # @carted_menu_item.user_id = params[:user_id]
+    # @carted_menu_item.menu_item_id = params[:menu_item_id]
+    @carted_menu_item.quantity = params[:quantity]
+    # @carted_menu_item.status = params[:status]
+    if @carted_menu_item.save
+      flash[:success] = 'Cart Updated!'
+      redirect_to '/carted_menu_items'
+    else
+      @carted_menu_item.errors.full_messages
+      flash[:danger] = 'Item quantity not updated. Try again.'
+      redirect_to "carted_menu_items/#{@carted_menu_item.id}/edit"
+    end
+  end
+
   def destroy
     carted_menu_item = CartedMenuItem.find_by(id: params[:id])
     carted_menu_item.status = 'removed'

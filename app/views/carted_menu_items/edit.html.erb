@@ -1,0 +1,17 @@
+<div class="page-header" id="header">
+  <h1>Update Shopping Cart <span class="fa fa-shopping-cart"></span></h1>
+</div>
+<div class="container" id="order-index">
+  <h3>Current Carted Item</h3>
+  <%= form_tag "/carted_menu_items/#{@carted_menu_item.id}", method: :patch do %>
+    <div>
+      <%= label_tag :name %>
+    </div>
+    <div>
+      <%= label_tag :quantity %>
+      <%= text_field_tag :quantity, @carted_menu_item.quantity %>
+    </div>
+    <%= submit_tag "Update Cart!" %>
+    <a href="/menu_items/<%= @carted_menu_item.id %>" %>Cancel</a>
+  <% end %>
+</div>

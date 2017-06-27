@@ -14,7 +14,7 @@
       <% @carted_menu_items.each do |carted_menu_item| %>
         <tr>
           <td><%= carted_menu_item.menu_item.name %></td>
-          <td><%= carted_menu_item.quantity %></td>
+          <td><%= carted_menu_item.quantity %><br><a href="/carted_menu_items/<%= carted_menu_item.id %>/edit">Edit Qty.?</a></td>
           <td><%= number_to_currency(carted_menu_item.subtotal) %></td>
           <td><%= link_to "Remove from cart", "/carted_menu_items/#{carted_menu_item.id}", method: :delete %></td>
         </tr>
