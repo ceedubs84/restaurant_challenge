@@ -1,4 +1,6 @@
 class MenuItem < ApplicationRecord
+  mount_uploader :avatar, AvatarUploader
+
   has_many :carted_menu_items
   has_many :orders, through: :carted_menu_items
   has_many :menu_item_categories

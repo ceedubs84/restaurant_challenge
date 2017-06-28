@@ -43,6 +43,8 @@ gem 'font-awesome-rails'
 gem 'simple_form'
 # For controller testing with RSpec
 gem 'rails-controller-testing'
+# For file uploads
+gem 'carrierwave', '~> 1.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

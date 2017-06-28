@@ -46,6 +46,7 @@ class MenuItemsController < ApplicationController
     @menu_item.name = params[:name]
     @menu_item.description = params[:description]
     @menu_item.price = params[:price]
+    @menu_item.avatar = params[:file]
     if @menu_item.save
       flash[:success] = 'Menu item updated successfully!'
       redirect_to '/menu_items'
@@ -69,6 +70,7 @@ class MenuItemsController < ApplicationController
       :name,
       :description,
       :price,
+      :avatar,
       category_ids: []
     )
   end

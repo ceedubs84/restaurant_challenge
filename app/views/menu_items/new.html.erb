@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-8 col-md-offset-2">
-      <%= simple_form_for @menu_item do |f| %>
+      <%= simple_form_for @menu_item, html: { multipart: true } do |f| %>
 
         <%= f.label :name %>
         <%= f.text_field :name %>
@@ -19,6 +19,12 @@
                 </div>
             <% end %>
         </div>
+        <div>
+            <%= f.label 'Upload Menu Item Image' %><br />
+            <%= f.file_field :avatar %>
+            <%= f.hidden_field :avatar_cache %>
+        </div>
+
         <%= f.button :submit, class: 'btn btn-primary btn-small' %>
         <%= link_to 'Cancel', '/menu_items', :class => 'btn btn-default btn-small'  %>
 
