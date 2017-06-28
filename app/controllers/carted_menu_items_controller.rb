@@ -41,7 +41,6 @@ class CartedMenuItemsController < ApplicationController
       flash[:success] = 'Cart Updated!'
       redirect_to '/carted_menu_items'
     else
-      @carted_menu_item.errors.full_messages
       flash[:danger] = 'Item quantity not updated. Try again.'
       redirect_to "carted_menu_items/#{@carted_menu_item.id}/edit"
     end
