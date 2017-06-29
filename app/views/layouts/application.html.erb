@@ -55,7 +55,7 @@
     <%= yield %>
     <!-- Footer -->
     <nav class="navbar navbar-fixed-bottom">
-      <div class="container-fluid">
+      <div class="container-fluid" id="footer-text">
         <% if current_user && current_user.admin == false %>
           <p class="navbar-text navbar-left">Logged in as: <%= current_user.name %></p>
         <% elsif current_user && current_user.admin? %>

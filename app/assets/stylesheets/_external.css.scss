@@ -94,6 +94,11 @@ select {
 }
 
 #avatar-show {
-  max-width: 300px;
-  height: auto;
+  object-fit: contain;
+  width: 300px;
+  height: 200px;
+}
+
+#footer-text {
+  color: $cool-blue;
 }
