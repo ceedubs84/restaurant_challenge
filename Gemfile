@@ -55,6 +55,8 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.5'
   # For fake data
   gem 'faker'
+  # For factory generation
+  gem 'factory_girl_rails'
 end
 
 group :development do
