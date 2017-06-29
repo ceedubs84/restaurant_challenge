@@ -45,6 +45,8 @@ gem 'simple_form'
 gem 'rails-controller-testing'
 # For file uploads
 gem 'carrierwave', '~> 1.0'
+# For creating seed file
+gem 'seed_dump'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
