@@ -14,7 +14,7 @@ class MenuItem < ApplicationRecord
   validates :price, numericality: { greater_than: 0 }
 
   def tax
-    price.to_f * 0.09
+    price * 0.09
   end
 
   def total
