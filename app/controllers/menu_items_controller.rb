@@ -24,7 +24,7 @@ class MenuItemsController < ApplicationController
     @menu_item = MenuItem.new(menu_item_params)
     if @menu_item.save
       flash[:success] = "#{@menu_item.name} added to menu!"
-      redirect_to "/menu_items/#{@menu_item.id}"
+      redirect_to '/menu_items'
     else
       flash[:warning] = 'Menu item did not save. Please try again.'
       render 'new.html.erb'
