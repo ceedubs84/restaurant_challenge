@@ -46,13 +46,14 @@ class MenuItemsController < ApplicationController
     @menu_item.name = params[:name]
     @menu_item.description = params[:description]
     @menu_item.price = params[:price]
-    @menu_item.avatar = params[:file]
-    if @menu_item.save
+    @menu_item.avatar = params[:avatar]
+    @menu_item.category_ids = params[:category_ids]
+    if @menu_item.update(menu_item_params)
       flash[:success] = 'Menu item updated successfully!'
-      redirect_to '/menu_items'
+      redirect_to "/menu_items/#{@menu_item.id}"
     else
       flash[:warning] = 'Could not update. Try again.'
-      render "/menu_items/#{@menu_item.id}/edit"
+      redirect_to "/menu_items/#{@menu_item.id}/edit"
     end
   end
 

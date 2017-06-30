@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-sm-8 col-sm-offset-4">
       <h1>Edit Menu Item</h1>
-      <%= form_tag "/menu_items/#{@menu_item.id}", method: :patch, html: { multipart: true } do %>
+      <%= form_tag "/menu_items/#{@menu_item.id}", method: :patch do %>
         <div>
           <%= label_tag :name %>
           <%= text_field_tag :name, @menu_item.name %>
@@ -19,7 +19,7 @@
             <%= label_tag 'Upload Menu Item Image' %><br />
             <%= file_field_tag :avatar %>
             <%= hidden_field_tag :avatar_cache %>
-        </div><br/>
+        </div>
         <div class="field">
           <%= label_tag 'Categories' %><br />
           <%= collection_check_boxes(:menu_item, :category_ids, Category.all, :id, :name) do |c| %>
