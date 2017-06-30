@@ -48,6 +48,11 @@ RSpec.describe MenuItemsController, type: :controller do
       post :create, params: { menu_item: attributes_for(:menu_item_with_categories) }
       expect(response).to redirect_to('/menu_items')
     end
+    it 'renders new.html if item does not save' do
+      allow_any_instance_of(MenuItem).to receive(:save).and_return(false)
+      post :create, params: { menu_item: attributes_for(:menu_item_with_categories) }
+      expect(response).to render_template('new.html.erb')
+    end
   end
 
   describe 'GET #show' do

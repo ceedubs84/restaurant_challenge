@@ -7,6 +7,7 @@ FactoryGirl.define do
     name Faker::Food.ingredient
     description Faker::Lorem.unique.sentence
     price Faker::Commerce.price
+    avatar Faker::Avatar.image
 
     factory :menu_item_with_categories do
       transient do
