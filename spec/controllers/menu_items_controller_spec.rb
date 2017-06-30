@@ -56,6 +56,26 @@ RSpec.describe MenuItemsController, type: :controller do
   end
 
   describe 'GET #show' do
+    before :each do
+      @menu_item = create(:menu_item_with_categories)
+    end
+
+    context 'admin signed in' do
+      before :each do
+        @admin = create(:admin)
+        session[:user_id] = @admin.id
+      end
+
+      it 'assigns the requested menu_item to @menu_item' do
+        get :show, params: { id: @menu_item.id }
+        expect(assigns(:menu_item)).to eq(@menu_item)
+      end
+
+      it 'renders the show page' do
+        get :show, params: { id: @menu_item.id }
+        expect(response).to render_template('show.html.erb')
+      end
+    end
   end
 
   describe 'GET #edit' do
