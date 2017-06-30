@@ -5,7 +5,7 @@ FactoryGirl.define do
 
   factory :menu_item do
     name Faker::Food.ingredient
-    description Faker::Lorem.sentence
+    description Faker::Lorem.unique.sentence
     price Faker::Commerce.price
 
     factory :menu_item_with_categories do

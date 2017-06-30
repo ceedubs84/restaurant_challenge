@@ -9,7 +9,6 @@ class MenuItem < ApplicationRecord
   validates :name, presence: true
   validates :name, uniqueness: true
   validates :description, presence: true
-  validates :description, uniqueness: true
 
   validates :price, numericality: { greater_than: 0 }
 
