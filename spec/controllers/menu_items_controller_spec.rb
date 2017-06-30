@@ -79,6 +79,16 @@ RSpec.describe MenuItemsController, type: :controller do
   end
 
   describe 'GET #edit' do
+    it 'assigns the requested menu_item to @menu_item' do
+      menu_item = create(:menu_item_with_categories)
+      get :edit, id: menu_item.id
+      expect(assigns(:menu_item)).to eq(menu_item)
+    end
+    it 'renders the :edit template' do
+      menu_item = create(:menu_item_with_categories)
+      get :edit, id: menu_item.id
+      expect(response).to render_template('edit.html.erb')
+    end
   end
 
   describe 'PATCH #update' do
