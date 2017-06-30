@@ -10,7 +10,7 @@ RSpec.describe User, type: :model do
       expect(FactoryGirl.build(:admin)).to be_valid
     end
 
-    it 'is invalid if menu item already exists with the same name' do
+    it 'is invalid if user already exists with the same name' do
       user1 = create(:user, email: 'joe_user@test.com')
       user2 = build(:user, email: 'joe_user@test.com')
       expect(user2).to_not be_valid
