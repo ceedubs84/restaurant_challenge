@@ -1,12 +1,11 @@
 class PagesController < ApplicationController
   def index
-    'index.html.erb'
+    render 'index.html.erb'
   end
 
   def about
     @about_info = Faker::Lorem.paragraphs(2)
-    puts @about_info
-    'about.html.erb'
+    render 'about.html.erb'
   end
 
   def admin_panel
@@ -16,6 +15,6 @@ class PagesController < ApplicationController
     @user_count = @users.count
     @orders = Order.all
     @order_count = @orders.count
-    'admin_panel.html.erb'
+    render 'admin_panel.html.erb'
   end
 end
