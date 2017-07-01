@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe MenuItemsController, type: :controller do
   describe 'GET #index' do
-    it 'assigns all eligible menu items to @menu' do
+    it 'assigns all eligible menu items to @menu_item' do
       all_items = [
         create(:menu_item_with_categories),
         create(:menu_item_with_categories, name: 'Onion Peels')

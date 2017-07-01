@@ -19,8 +19,8 @@ class CartedMenuItemsController < ApplicationController
   end
 
   def create
-    carted_menu_item = CartedMenuItem.new(carted_menu_item_params)
-    if carted_menu_item.save
+    @carted_menu_item = CartedMenuItem.new(carted_menu_item_params)
+    if @carted_menu_item.save
       flash[:success] = 'Added to cart successfullly!'
       redirect_to '/carted_menu_items'
     else
