@@ -44,7 +44,7 @@ gem 'simple_form'
 # For controller testing with RSpec
 gem 'rails-controller-testing'
 # For file uploads
-gem 'carrierwave', '~> 1.0'
+gem 'carrierwave', '~> 1.3'
 # For creating seed file
 gem 'seed_dump'
 
